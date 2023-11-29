@@ -31,9 +31,16 @@ if data_file is not None:
         st.pyplot(fig)
 
     st.header('Show correlation between variables')
-    # Xóa các dòng chứa giá trị NaN trước khi tính toán ma trận tương quan
-    df_corr = df.dropna()
-    
-    fig, ax = plt.subplots()
-    sns.heatmap(df_corr.corr(method='pearson'), vmax=1, square=True, cmap='Reds')
+    fig, ax= plt.subplots()
+    sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1, square=True, annot=True, cmap='Reds')
     st.write(fig)
+
+    output = st.radio('Choose a dependent variable',  df.columns)
+    st.header('Show correlation between variables')
+    for col in list(df.columns):
+    if col != output:
+       fig, ax = plt.subplots()
+       ax.scatter(x=df[col], y=df[output])
+       plt.xlabel(col)
+       plt.ylabel(output)
+       st.pyplot(fig)
