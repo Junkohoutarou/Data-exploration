@@ -36,12 +36,12 @@ if data_file is not None:
     df_corr = df.dropna()
 
     # Kiểm tra xem DataFrame có đủ dữ liệu để tính toán không
-    if len(df_corr) >= 2 and len(df_corr.columns) >= 2:
+    if len(df_corr) >= 2 and len(df_corr.columns) >= 2 and df_corr.select_dtypes(include='number').shape[1] >= 2:
         fig, ax = plt.subplots()
         sns.heatmap(df_corr.corr(method='pearson'), ax=ax, vmax=1, square=True, annot=True, cmap='Reds')
         st.write(fig)
     else:
-        st.warning('Not enough data to calculate correlation matrix.')
+        st.warning('Not enough numeric data to calculate correlation matrix.')
 
     output = st.radio('Choose a dependent variable', df.columns)
     st.header('Show correlation between variables')
