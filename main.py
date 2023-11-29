@@ -12,4 +12,6 @@ if data_file is not None:
 st.dataframe(df)
 
 st.header('Descriptive staticstics')
-st.tatble(df.describe())
+st.table(df.describe())
+
+
