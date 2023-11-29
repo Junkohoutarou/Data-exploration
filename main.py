@@ -9,7 +9,7 @@ if data_file is not None:
  df = pd.read_csv(data_file)
 
  st.header('Show data')
- st.datafame(df)
+st.dataframe(df)
 
 st.header('Descriptive staticstics')
 st.tatble(df.describe())
