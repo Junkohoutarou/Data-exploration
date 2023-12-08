@@ -7,11 +7,11 @@ from PIL import Image
 
 with open("styles.css") as f:
     custom_css = f.read()
-st.title('Data visualization')
+st.title('Data exploration')
 st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
 
 st.image("image.jpg", use_column_width=True)
-st.header('Upload data file')
+st.header('Upload a dataset')
 data_file = st.file_uploader('Choose a csv file', type=(['.csv']))
 
 if data_file is not None:
