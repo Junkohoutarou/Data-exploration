@@ -7,8 +7,9 @@ import seaborn as sns
 
 with open("styles.css") as f:
     custom_css = f.read()
-
+st.image("example_image.png", use_column_width=True)
 st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
+
 st.title('Data visualization')
 st.header('Upload data file')
 data_file = st.file_uploader('Choose a csv file', type=(['.csv']))
