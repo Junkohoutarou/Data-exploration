@@ -26,6 +26,6 @@ h3 {
     color: #1f4175;
 }
 img {
-    max-width: 200px; 
-    height: 200px;   
+    max-width: 80%px; 
+    height: auto;   
 }
