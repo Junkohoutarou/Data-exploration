@@ -3,7 +3,7 @@ import pandas as pd
 import io
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+from PIL import Image
 
 with open("styles.css") as f:
     custom_css = f.read()
