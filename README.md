@@ -1,1 +1,1 @@
-# SML_app
+# Ứng dụng khám phá dữ liệu
