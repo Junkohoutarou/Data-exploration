@@ -25,3 +25,7 @@ h3 {
 .css-1l02zno {
     color: #1f4175;
 }
+img {
+    max-width: 100%; 
+    height: auto;   
+}
